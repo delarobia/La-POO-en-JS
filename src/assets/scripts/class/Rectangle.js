@@ -7,13 +7,23 @@ class Rectangle {
         return this._longueur;
     }
     set longueur(value) {
-        this._longueur = value;
+        if (value > 0) {
+            this._longueur = value;
+        }
+        else {
+            throw new RangeError(`La longueur doit être strictement positive.`);
+        }
     }
     get hauteur() {
         return this._hauteur;
     }
     set hauteur(value) {
-        this._hauteur = value;
+        if (value > 0) {
+            this._hauteur = value;
+        }
+        else {
+            throw new RangeError(`La largeur doit être strictement positive.`);
+        }
     }
     perimetre() {
         return 2 * this._hauteur + 2 * this._longueur;
