@@ -46,6 +46,13 @@ let e2 = new Employe({
 e2.getEmployeConsole();
 let pr1 = new Produit({ id: 1, nom: "Costume", prixHT: 10, tauxTVA: 10 });
 pr1.getDescription();
-let veh = new Vehicule({ modele: "test", marque: "audi", annee: 2005 });
-let voit = new Voiture({ modele: "test", marque: "audi", annee: 2055, nombrePortes: 5 });
-debugger;
+try {
+    let veh = new Vehicule({ modele: "test", marque: "audi", annee: 205 });
+    let voit = new Voiture({ modele: "test", marque: "audi", annee: 2008, nombrePortes: 5 });
+}
+catch (error) {
+    if (error instanceof RangeError) {
+        console.warn(error.message);
+    }
+}
+console.log("après l'erreur");
