@@ -30,7 +30,7 @@ class Produit {
             this._prixHT = value;
         }
         else {
-            throw new RangeError(`Le prix doit être ${value < 0 ? "supérieur à 0" : "inférieus à 10 000"} €`);
+            throw new RangeError(`Le prix doit être ${value < 0 ? "supérieur à 0" : "inférieur à 10 000"} €`);
         }
     }
     get tauxTVA() {
